@@ -114,3 +114,4 @@ GitHub.sublime-settings
 !.vscode/extensions.json
 .history# created by virtualenv automatically
 venv/bin
+/.env.dev
