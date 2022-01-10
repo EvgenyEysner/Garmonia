@@ -14,3 +14,11 @@ class Swiper(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Carousel(models.Model):
+    """
+    Beauty experts
+    """
+    name = models.CharField('überschrift', max_length=128, help_text='maximal 128 Zeichen', null=True, blank=True)
+    image = models.ImageField('bild', upload_to='images/swiper', help_text='maximale Bildauflösung 370x370')

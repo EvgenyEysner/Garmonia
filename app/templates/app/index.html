@@ -1,7 +1,106 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+{% load static %}
+{% load static custom_tags %}
+{% block content %}
+<!-- Swiper -->
+{% include 'snippets/swiper.html' %}
+<section class="section section-lg bg-gray-100">
+  <div class="container">
+    <div class="row row-50 align-items-lg-center justify-content-xl-between">
+      <div class="col-lg-6 text-center">
+        <div class="block-parallax-element">
+          <span
+            class="prev-element"
+            data-parallax-scroll='{"y": -30, "x": 0,  "smoothness": 50 }'
+          ></span
+          ><img
+            src="{% static 'images/honey.jpeg' %}"
+            alt=""
+            width="378"
+            height="463"
+          /><span
+            class="next-element"
+            data-parallax-scroll='{"y": 30, "x": 0,  "smoothness": 50 }'
+          ></span>
+        </div>
+      </div>
+      <div class="col-lg-6 col-xl-5">
+        <h2 class="heading-decorate">
+          Warum unsere Kunden<br /><span class="divider"></span>uns wählen
+        </h2>
+        <p class="big text-gray-800">
+          Wir sind der führende Schönheitssalon in Oldenburg für
+          Füße, Nägel, Hautpflege und vieles mehr.
+        </p>
+        <p class="text-spacing-60">
+          Unsere Kunden schätzen unseren Kundenservice, den
+          Fähigkeiten unserer Stylisten und Kosmetikerinnen sowie unserer Profis
+          Herangehensweise an alles, was wir tun.
+        </p>
+        <!-- <a class="button button-primary" href="#">learn more</a> -->
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section section-lg bg-default">
+  <div class="container">
+    <div class="row row-50 align-items-lg-center justify-content-xl-between">
+      <div class="col-lg-6">
+        <div class="block-xs">
+          <h2 class="heading-decorate">
+            Eine vielzahl von Schönheits - <br /><span class="divider"></span>dienstleistungen
+          </h2>
+          <p class="big text-gray-800">
+            We offer a full range of salon treatments and styling services
+            provided by a team of professional stylists, all in a clean air
+            environment.
+          </p>
+          <p>
+            Our estheticians and stylists can make your hair look just the way
+            you want. Be it a hair extension, coloring, or styling, we can do it
+            all to make you look incredibly attractive.
+          </p>
+          <a class="button button-primary" href="#">Termin vereinbaren</a>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="box-images-classic">
+          <div class="row row-30">
+            <div class="col-6">
+              <div
+                class="box-image-item"
+                data-parallax-scroll='{"y": 0, "x": -20,  "smoothness": 30 }'
+              >
+                <img
+                  src="{% static 'images/services-1-270x458.jpg' %}"
+                  alt=""
+                  width="270"
+                  height="458"
+                />
+              </div>
+            </div>
+            <div class="col-6">
+              <div
+                class="box-image-item"
+                data-parallax-scroll='{"y": 0, "x": 20,  "smoothness": 30 }'
+              >
+                <img
+                  src="{% static 'images/services-2-270x458.jpg' %}"
+                  alt=""
+                  width="270"
+                  height="458"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="section section-md bg-default text-center">
   <div class="container">
-    <h2>Our Professional Team</h2>
+    <h2>Usere Wirkstoffkosmetiker</h2>
     <div class="divider-lg"></div>
     <p class="block-lg">
       We employ the best experts in the beauty industry and educate our own
@@ -27,21 +126,24 @@
           data-center="true"
           data-autoplay="true"
         >
+          {% get_carousel_images as images %}
+          {% for img in images %}
           <div class="team-minimal">
             <figure>
               <img
-                src="images/team-1-370x370.jpg"
+                src="{{img.image.url}}"
                 alt=""
                 width="370"
                 height="370"
               />
             </figure>
             <div class="team-minimal-caption">
-              <h4 class="team-title"><a href="#">Mary Lucas</a></h4>
-              <p>Founder, Senior Esthetician</p>
+              <h4 class="team-title"><a href="#"></a></h4>
+              <p></p>
             </div>
           </div>
-          <div class="team-minimal">
+          {% endfor %}
+          <!-- <div class="team-minimal">
             <figure>
               <img
                 src="images/team-2-370x370.jpg"
@@ -129,6 +231,10 @@
       </div>
       <div class="col-12">
         <a class="button button-primary" href="#">View all team</a>
+      </div>
+    </div>
+  </div> -->
+        </div>
       </div>
     </div>
   </div>
